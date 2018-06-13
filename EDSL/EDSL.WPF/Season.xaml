@@ -1,0 +1,69 @@
+﻿<Page x:Class="EDSL.WPF.Season"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EDSL.WPF"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Season" Background="White">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="4*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Column="0" Grid.Row="0">
+                <Button x:Name="btnSeason" MinHeight="30" Margin="10" Click="btnSeason_Click">Season</Button>
+                <Button x:Name="btnResults" MinHeight="30" Margin="10" Click="btnResults_Click">Results</Button>
+            </StackPanel>
+
+            <Border BorderThickness="0 0 1 1" BorderBrush="Black"></Border>
+            <Border Grid.Column="0" Grid.Row="1" BorderThickness="0 0 1 0" BorderBrush="Black"></Border>
+
+            <StackPanel Grid.Column="0" Grid.Row="1">
+                <Button MinHeight="30" Margin="10">Clubs</Button>
+                <Button MinHeight="30" Margin="10">Teams</Button>
+                <Button MinHeight="30" Margin="10">Players</Button>
+                <Button MinHeight="30" Margin="10">Reports</Button>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Column="1" Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="6*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <StackPanel HorizontalAlignment="Left" Grid.Column="0" Grid.Row="0" Margin="30">
+                <Label>Season</Label>
+                <TextBox MinHeight="20"></TextBox>
+                <Label>Start Date</Label>
+                <StackPanel Orientation="Horizontal">
+                    <DatePicker x:Name="dpkStartDate" MinHeight="20" MinWidth="100" Margin="0,0,10,0"></DatePicker>
+                    <Button MinWidth="40">Dates</Button>
+                </StackPanel>
+                <Label>No. of Rounds</Label>
+                <TextBox MinHeight="20"></TextBox>
+                <Label>Division</Label>
+                <StackPanel Orientation="Horizontal">
+                    <ComboBox x:Name="cmbDivision" MinWidth="100" Margin="0,0,10,0"></ComboBox>
+                    <Button x:Name="btnAddDivision" MinWidth="40">Add</Button>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="1">
+                <Button Margin="10" MinWidth="100">Create Draw</Button>
+                <Button Margin="10" MinWidth="100">View Draw</Button>
+            </StackPanel>
+            
+        </Grid>
+        
+    </Grid>
+</Page>
